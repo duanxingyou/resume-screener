@@ -33,4 +33,4 @@ RUN mkdir -p data cache chroma_db
 EXPOSE 8000
 
 # 启动应用
-CMD ["bash", "start.sh"]
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
